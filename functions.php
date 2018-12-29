@@ -8,6 +8,15 @@ function remove_redirects() {
 }
 add_action('init', 'remove_redirects');
 
+//Menus
+register_nav_menus(
+    array(
+        'main'    => __( 'Main Menu', 'lobato' ),
+        'footer' => __( 'Footer Menu', 'lobato' ),
+        'social' => __( 'Social Links Menu', 'lobato' ),
+    )
+);
+
 // Load scripts
 function load_vue_scripts() {
     wp_enqueue_style('blankslate/app.css', get_template_directory_uri() . '/dist/styles/app.css', false, null);

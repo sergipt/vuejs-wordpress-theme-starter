@@ -32,8 +32,28 @@ export default {
 
   getPosts (limit, cb) {
     if (_.isEmpty(limit)) { let limit = 5 }
-    
+
     axios.get(window.SETTINGS.API_BASE_PATH + 'posts?per_page='+limit)
+      .then(response => {
+        cb(response.data)
+      })
+      .catch(e => {
+        cb(e)
+      })
+  },
+
+  getMenus (cb) {
+    axios.get(window.SETTINGS.API_MENU_BASE_PATH + 'menus/')
+      .then(response => {
+        cb(response.data)
+      })
+      .catch(e => {
+        cb(e)
+      })
+  },
+
+  getMenu (id, cb) {
+    axios.get(window.SETTINGS.API_MENU_BASE_PATH + 'menus/' + id)
       .then(response => {
         cb(response.data)
       })

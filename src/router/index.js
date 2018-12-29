@@ -2,9 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // Components
-import Home from '../components/Home.vue'
 import Post from '../components/Post/Post.vue'
-import Page from '../components/Page/Page.vue'
+// import Page from '../components/pages/Page.vue'
+import Home from '../components/pages/Home.vue'
+import AboutUs from '../components/pages/AboutUs.vue'
+import Projects from '../components/pages/Projects.vue'
+import Contact from '../components/pages/Contact.vue'
 
 Vue.use(Router)
 
@@ -12,20 +15,36 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'home',
+      component: Home,
+    },
+    {
+      path: '/acerca-de',
+      name: 'acerca-de',
+      component: AboutUs,
+    },
+    {
+      path: '/proyectos',
+      name: 'proyectos',
+      component: Projects,
+    },
+    {
+      path: '/contacto',
+      name: 'contacto',
+      component: Contact,
     },
     {
       // Assuming you're using the default permalink structure for posts
       path: '/:year/:month/:day/:postSlug',
       name: 'Post',
-      component: Post
+      component: Post,
     },
-    {
-      path: '/:pageSlug',
-      name: 'Page',
-      component: Page
-    }
+    // {
+    //   path: '/:pageSlug',
+    //   name: 'Page',
+    //   component: Page,
+    //   props: true,
+    // },
   ],
   mode: 'history',
   base: '',

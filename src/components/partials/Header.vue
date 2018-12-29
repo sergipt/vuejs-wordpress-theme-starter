@@ -7,9 +7,8 @@
 
         <b-collapse is-nav id="nav_collapse">
 
-            <b-nav is-nav-bar>
-            <b-nav-item href="#">Link</b-nav-item>
-            </b-nav>
+            <NavMenu />
+
 
             <!-- Right aligned nav items -->
             <b-nav is-nav-bar class="ml-auto">
@@ -32,3 +31,13 @@
         </b-collapse>
     </b-navbar>
 </template>
+
+<script>
+import NavMenu from './NavMenu.vue';
+
+export default {
+  components: {
+    NavMenu
+  }
+}
+</script>
