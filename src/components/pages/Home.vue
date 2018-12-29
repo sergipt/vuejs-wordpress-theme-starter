@@ -20,9 +20,7 @@ export default {
     }),
 
     pageContent() {
-      console.log(this.$route);
-      // return this.page(this.$route.params.pageSlug)
-      return this.page(2)
+      return this.page(this.$route.name)
     }
   },
 
